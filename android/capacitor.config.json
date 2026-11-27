@@ -1,0 +1,20 @@
+{
+  "appId": "co.za.gmkwebservices.invoice",
+  "appName": "GMK Invoice",
+  "webDir": "www",
+  "backgroundColor": "#ffffff",
+  "server": {
+    "url": "https://gmkwebservices.co.za/invoice-app/?gmk_view=login",
+    "cleartext": false,
+    "allowNavigation": [
+      "gmkwebservices.co.za",
+      "*.gmkwebservices.co.za",
+      "payfast.co.za",
+      "*.payfast.co.za"
+    ]
+  },
+  "android": {
+    "appendUserAgent": "GMKInvoiceApp/1.0",
+    "allowMixedContent": false
+  }
+}
