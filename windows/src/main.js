@@ -24,7 +24,8 @@ function create() {
     webPreferences: { contextIsolation: true, nodeIntegration: false, sandbox: true, spellcheck: true }
   });
   Menu.setApplicationMenu(null);
-  win.webContents.setUserAgent(win.webContents.getUserAgent().replace(/ Electron\/[\d.]+/, '') + ' ' + cfg.UA_SUFFIX);
+  // Tells the server which app version this is, so it can offer an update when a newer release is published.
+  win.webContents.setUserAgent(win.webContents.getUserAgent().replace(/ Electron\/[\d.]+/, '') + ' GMKInvoiceApp/' + app.getVersion());
   win.once('ready-to-show', () => win.show());
   win.loadURL(cfg.START_URL);
 
