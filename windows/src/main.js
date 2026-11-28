@@ -30,11 +30,14 @@ function create() {
 
   // Anything that is not your site / PayFast (WhatsApp, mailto:, other websites) opens in the normal browser or mail app.
   win.webContents.setWindowOpenHandler(({ url }) => {
+    // "Continue with Google": Google refuses app windows, so that page opens in the normal browser (marked gmk_ext=1).
+    if (url.includes('gmk_ext=1')) { shell.openExternal(url); return { action: 'deny' }; }
     if (isInternal(url)) return { action: 'allow' };
     shell.openExternal(url);
     return { action: 'deny' };
   });
   win.webContents.on('will-navigate', (e, url) => {
+    if (url.includes('gmk_ext=1')) { e.preventDefault(); shell.openExternal(url); return; }
     if (!isInternal(url) && !url.startsWith('file:')) { e.preventDefault(); shell.openExternal(url); }
   });
   // No internet: show a friendly page with a Retry button.

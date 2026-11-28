@@ -53,5 +53,5 @@ git push origin v1.0.0
 
 ## Good to know
 * The apps need an internet connection (they show your live account).
-* "Continue with Google" is hidden inside the apps, because Google does not allow sign-in inside app windows. Customers use email + password there (the website still offers Google). Requires GMK Invoice plugin **1.5.5** or newer on the server.
+* "Continue with Google" opens Google in your normal browser (Google does not allow sign-in inside app windows) and then signs the app in automatically. Requires GMK Invoice plugin **1.6.1** or newer on the server.
 * On Android, downloading a PDF straight from the app may not work in this first version; use the Email / WhatsApp share buttons.

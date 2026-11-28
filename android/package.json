@@ -1,11 +1,12 @@
 {
   "name": "gmk-invoice-android",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "GMK Invoice - Android app",
   "dependencies": {
     "@capacitor/android": "^6.2.0",
-    "@capacitor/core": "^6.2.0"
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/browser": "^6.0.2"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",
